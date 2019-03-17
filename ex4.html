@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" />
+    <title></title>
+  </head>
+  <body>
+    <!-- <form id="upload" action="/note/upload" method="POST" enctype="multipart/form-data">
+  <fieldset>
+    <div class="files">
+      <input id="fileselect" type="file" name="fileselect" multiple="multiple" class="addFile"/>
+    </div>
+    <div id="filedrag">drag and drop</div>
+    <div id="submitbutton">
+      <button type="submit">Upload Files</button>
+    </div>
+  </fieldset>
+</form> -->
+
+<!-- <table class="table">
+  <thead>
+    <th>이름</th>
+    <th>타입</th>
+    <th>용량</th>
+  </thead>
+  <tbody id="list"></tbody>
+</table> -->
+      <!-- <div id="rectangle"></div> -->
+    <h1>
+      AI Video Analyzer
+    </h1>
+    <div>
+      <!-- <button onclick="movePlayPosition(5)">movePlayPosition</button>
+      <button onclick="draw()">draw</button>
+      <button onclick="makeBig()">Big</button>
+      <button onclick="makeSmall()">Small</button>
+      <button onclick="makeNormal()">Normal</button> -->
+
+      <br>
+    </div>
+    <div id="region1" style="width: 67%; float: left;">
+      <video id="video1" controls width=100%>
+        <source src="gurumi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- <svg width=100% height="100">
+      <rect id="rect1" x=4% y=10 width=92.5% height="20" style="fill:rgb(204,204,204);" />
+      Sorry, your browser does not support inline SVG.
+      </svg><br> -->
+      <canvas id="canvas" onclick="showColor(event);" >
+
+      </canvas>
+    </div>
+    <div id="region2" style="width: 30%; float: right;">
+      <h2>
+        People
+      </h2>
+
+      <img onclick="showBars()"
+      style="
+      width: 80px; height: 80px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      border: 3px solid #848484;
+      position: relative;
+      /* left: 10px; */
+      /* position: absolute; */
+      "
+      src="parkbogum.jpg" />
+
+      <img style="
+      width: 80px; height: 80px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      border: 3px solid #848484;
+      position: relative;
+      /* left: 10px; */
+      /* position: absolute; */
+      "
+      src="kimyujeong.jpg" />
+    </div>
+    <script>
+
+    function draw() {
+
+      // var canvas = document.getElementById('canvas');
+      // if (canvas.getContext) {
+      //   var ctx = canvas.getContext('2d');
+      //
+      //   ctx.fillRect(0, 0, 100000, 40);
+        // ctx.clearRect(45, 45, 60, 60);
+        // ctx.strokeRect(50, 50, 50, 50);
+    }
+    function showBars() {
+      // <body>
+      // <svg width="100" height="100">
+      // <rect width="100" height="100" style="fill:rgb(204,204,204);" />
+      // Sorry, your browser does not support inline SVG.
+      // </svg>
+      // </body>
+      var canvas = document.getElementById('canvas');
+      var myVideo = document.getElementById('video1');
+      var region1 = document.getElementById("region1")
+
+      canvas.width = region1.clientWidth
+      if (canvas.getContext) {
+
+
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'rgb(204,204,204)';
+        ctx.fillRect(0, 0, canvas.width, 20);
+
+        var ctx1 = canvas.getContext('2d');
+        ctx1.fillStyle = 'rgb(237,107,78)';
+        ctx1.fillRect(0, 0, 50, 20);
+    }
+}
+//     function showBars() {
+//       <div style="width:500px;height:100px;border:1px solid #000;">This is a rectangle!</div>
+//       // var rect = document.getElementById('rect1')
+//
+//       // alert("Image Clicked!")
+//       // var svg = document.getElementById('region1')
+// //       <svg width="400" height="110">
+// //   <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+// // </svg>
+//       // <svg x=0 y=0 width=100 height=10>
+//       //       <rect width=100 height=10 style="fill:rgb(204,204,204);" />
+//       //       <rect id="rect1" x=10 width=10 height="10" onclick="movePlayPosition(10)"
+//       //       style="fill:rgb(255,0,0);" />
+//       //       <rect id="rect2" x=60% width=20% height="10" style="fill:rgb(255,0,0);" />
+//       //       Sorry, your browser does not support inline SVG.
+//       // </svg><br>
+//     }
+
+    // </script>
+    <script src=canvas_click.js></script>
+
+
+
+
+  </body>
+</html>
